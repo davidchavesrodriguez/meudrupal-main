@@ -14,5 +14,3 @@ services:
       - ./apache/exemplo.lan.key:/etc/ssl/certs/exemplo.lan.key
       - ./apache/a22davidcr.giize.com.pem:/etc/ssl/certs/a22oscarnm.loseyourip.com.pem
       - ./apache/a22davidcr.giize.com.key:/etc/ssl/private/a22oscarnm.loseyourip.com.key
-volumes:
-  - datos:
