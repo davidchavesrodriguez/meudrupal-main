@@ -11,33 +11,8 @@ services:
       - ./app:/app
       - ./apache/exemplo.lan.conf:/etc/apache2/sites-enabled/exemplo.lan.conf
       - ./apache/exemplo.lan.pem:/etc/ssl/certs/exemplo.lan.pem
-      - ./apache/exemplo.lan.key:/etc/ssl/private/exemplo.lan.key
-      - ./apache/daw2324.giize.com.pem:/etc/ssl/certs/daw2324.giize.com.pem
-      - ./apache/daw2324.giize.com.key:/etc/ssl/private/daw2324.giize.com.key
-
-  basedatos:
-    image: mariadb
-    # ports:
-    #   - 3306:3306
-    environment:
-      MARIADB_ROOT_PASSWORD: abc123.
-      MYSQL_DATABASE: db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: user
-    volumes:
-      - datos:/var/lib/mysql 
-      - ./bd/backup.sql:/docker-entrypoint-initdb.d/backup.sql
-      - ./bd:/bd
-  phpmyadmin:
-    image: phpmyadmin
-    ports:
-      - 8080:80
-    environment:
-      PMA_HOST: basedatos
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: user
-
+      - ./apache/exemplo.lan.key:/etc/ssl/certs/exemplo.lan.key
+      - ./apache/a22davidcr.giize.com.pem:/etc/ssl/certs/a22oscarnm.loseyourip.com.pem
+      - ./apache/a22davidcr.giize.com.key:/etc/ssl/private/a22oscarnm.loseyourip.com.key
 volumes:
-  datos:
+  - datos:
